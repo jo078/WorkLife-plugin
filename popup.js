@@ -81,14 +81,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (activeTab.url.includes("meet.google.com")) {
     chrome.storage.sync.get([currentVideo], (data) => {
       const container = document.getElementsByClassName("container")[0];
-      //const currentVideoBookmarks = data[currentVideo] ? JSON.parse(data[currentVideo]) : [];
-      container.innerHTML = '<div class="title">Check gmeet recordings!!.</div>';
-      //viewBookmarks(currentVideoBookmarks);
+      const tagDeatils = document.getElementsByClassName("EY8ABd-OWXEXe-TAWMXe");
+      container.innerHTML = '<div class="title">   recordings!!.</div>';
     });
   } else {
     const container = document.getElementsByClassName("container")[0];
-
-    container.innerHTML = '<div class="title">This is not a youtube video page.</div>';
+    container.innerHTML = '<div class="title">This is not the page we are looking for.</div>';
   }
 });
 

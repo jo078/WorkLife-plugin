@@ -39,9 +39,13 @@
 
       youtubeLeftControls = document.getElementsByClassName("ytp-left-controls")[0];
       youtubePlayer = document.getElementsByClassName('video-stream')[0];
+      
+      await sleep(6000);
+      //window.onload = sleep(5000);
+      const tagDeatils = document.getElementsByClassName("EY8ABd-OWXEXe-TAWMXe")[1];
+      console.log('Current data '+tagDeatils.innerText);
+      console.log('Current data '+tagDeatils);
 
-      //youtubeLeftControls.appendChild(bookmarkBtn);
-      //bookmarkBtn.addEventListener("click", addNewBookmarkEventHandler);
     }
   };
 
@@ -75,4 +79,6 @@ chrome.runtime.sendMessage({ query: "currentTime" }, function (response) {
   const d = new Date();
   console.log('Current time recording started at '+d);
 });
+
+const sleep = ms => new Promise(res => setTimeout(res, ms));
 
